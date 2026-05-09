@@ -1,7 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import {
   LayoutDashboard, TrendingUp, LineChart, Sparkles, Users, ShoppingBag, FileBarChart,
-  Database, Upload, LogOut, Sun, Moon, MessageCircle
+  Database, LogOut, Sun, Moon, MessageCircle
 } from "lucide-react";
 import {
   Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel,
@@ -9,9 +9,7 @@ import {
 } from "@/components/ui/sidebar";
 import { useTheme } from "@/lib/ThemeContext";
 import { useAuth } from "@/lib/AuthContext";
-import { useData } from "@/lib/DataContext";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 const items = [
   { title: "Overview", url: "/dashboard", icon: LayoutDashboard },
@@ -29,7 +27,6 @@ export function AppSidebar() {
   const { pathname } = useLocation();
   const { theme, toggle } = useTheme();
   const { signOut, user } = useAuth();
-  const { mode } = useData();
 
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
@@ -76,13 +73,8 @@ export function AppSidebar() {
               <SidebarMenuItem>
                 <SidebarMenuButton asChild className="rounded-lg">
                   <NavLink to="/dashboard/data" className="flex items-center gap-3">
-                    {mode === "default" ? <Database className="size-4" /> : <Upload className="size-4" />}
-                    {!collapsed && (
-                      <div className="flex items-center justify-between flex-1">
-                        <span className="text-sm">Data Source</span>
-                        <Badge variant="secondary" className="text-[9px] uppercase">{mode}</Badge>
-                      </div>
-                    )}
+                    <Database className="size-4" />
+                    {!collapsed && <span className="text-sm">Data Source</span>}
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
