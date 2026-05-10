@@ -1,15 +1,10 @@
-import { Outlet, Navigate } from "react-router-dom";
+
+import { Outlet } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "./AppSidebar";
-import { useAuth } from "@/lib/AuthContext";
 import { ChatWidget } from "./ChatWidget";
-import { Skeleton } from "./ui/skeleton";
 
 export function DashboardLayout() {
-  const { user, loading } = useAuth();
-  if (loading) return <div className="min-h-screen flex items-center justify-center"><Skeleton className="h-32 w-64" /></div>;
-  if (!user) return <Navigate to="/login" replace />;
-
   return (
     <SidebarProvider>
       <div className="min-h-screen flex w-full bg-background">

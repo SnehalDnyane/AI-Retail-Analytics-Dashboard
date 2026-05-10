@@ -1,0 +1,7 @@
+Metric,LSTM,ARIMA
+MAE,"4,735,758","115,716,349"
+RMSE,"5,852,668","177,645,510"
+MAPE (%),8.53,7.98
+Accuracy (%),91.47,92.02
+Data Used,Daily (910 rows),Monthly (30 rows)
+Best For,Short-term daily,Medium-term monthly

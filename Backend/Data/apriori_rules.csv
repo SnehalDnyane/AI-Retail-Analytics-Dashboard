@@ -1,0 +1,13 @@
+antecedents,consequents,support,confidence,lift,label
+Beauty,Clothing,1.0,1.0,1.0,Beauty → Clothing
+Clothing,Beauty,1.0,1.0,1.0,Clothing → Beauty
+Beauty,Electronics,1.0,1.0,1.0,Beauty → Electronics
+Electronics,Beauty,1.0,1.0,1.0,Electronics → Beauty
+Electronics,Clothing,1.0,1.0,1.0,Electronics → Clothing
+Clothing,Electronics,1.0,1.0,1.0,Clothing → Electronics
+"Beauty, Electronics",Clothing,1.0,1.0,1.0,"Beauty, Electronics → Clothing"
+"Beauty, Clothing",Electronics,1.0,1.0,1.0,"Beauty, Clothing → Electronics"
+"Electronics, Clothing",Beauty,1.0,1.0,1.0,"Electronics, Clothing → Beauty"
+Beauty,"Electronics, Clothing",1.0,1.0,1.0,"Beauty → Electronics, Clothing"
+Electronics,"Beauty, Clothing",1.0,1.0,1.0,"Electronics → Beauty, Clothing"
+Clothing,"Beauty, Electronics",1.0,1.0,1.0,"Clothing → Beauty, Electronics"
